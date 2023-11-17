@@ -1,0 +1,8 @@
+﻿@model IEnumerable<Shtat.Models.Uchastok>
+<select id="uch" name="uch" class="form-control">
+    <option selected value="0">Выберите участок</option>
+    @foreach (var item in Model)
+    {
+        <option value="@item.IDuch">@item.Uchastok1</option>
+    }
+</select>

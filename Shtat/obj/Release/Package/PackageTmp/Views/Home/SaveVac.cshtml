@@ -1,0 +1,222 @@
+﻿@model IEnumerable<Shtat.Models.vacancy>
+@{
+    ViewBag.Title = "SaveVac";
+}
+
+<style type="text/css">
+    TH {
+        background: #EFF5FB; /* Цвет фона */
+        border-bottom: double;
+    }
+
+    tr:nth-child(odd) {
+        background: #EFF5FB; /* Цвет фона */
+    }
+
+    tr:nth-child(even) {
+        background: #ffffff; /* Цвет фона */
+    }
+</style>
+
+
+
+<div id="tab">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.ActionLink("Подразд", "Index", new { sortOrder = ViewBag.PodrSortParm })
+            </th>
+            <th>
+                Отдел
+            </th>
+            <th>
+                Группа
+            </th>
+            <th>
+                Участок
+            </th>
+            <th>
+                ОКРБ
+            </th>
+            <th>
+                @Html.ActionLink("Долж", "Index", new { sortOrder = ViewBag.DoljSortParm })
+            </th>
+            <th>
+                @Html.ActionLink("Сотр", "Index", new { sortOrder = ViewBag.SotrSortParm })
+            </th>
+            <th>
+                АУП
+            </th>
+            <th>
+                @Html.ActionLink("БТС", "Index", new { sortOrder = ViewBag.StavSortParm })
+            </th>
+            <th>
+                Разряд
+            </th>
+            <th>
+                Кол
+            </th>
+            <th>
+                Всего_ЗП
+            </th>
+            <th>
+                0.93_1.07
+            </th>
+            <th>
+                ВысКвал
+            </th>
+            <th>
+                ТехВид
+            </th>
+            <th>
+                ХарСпец
+            </th>
+            <th>
+                ЗаФил
+            </th>
+            <th>
+                ЗаКат
+            </th>
+            <th>
+                ЗаСтарш
+            </th>
+            <th>
+                ОкладПов
+            </th>
+            <th>
+                ЗаКонтр
+            </th>
+            <th>
+                1748
+            </th>
+            <th>
+                ДолжОклад
+            </th>
+            <th>
+                ПрофМаст
+            </th>
+            <th>
+                ВысДост
+            </th>
+            <th>
+                Прочая
+            </th>
+            <th>
+                Итог
+            </th>
+            <th>
+                ДатаС
+            </th>
+            <th>
+                ДатаПо
+            </th>
+            <th>
+                Признак
+            </th>
+            <th></th>
+        </tr>
+        
+        
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Podrazdel.Podrazd)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Otdel.Otdel1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gruppa.Gruppa1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Uchastok.Uchastok1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OKRB.OKRB1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Doljnost.Doljnost1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sotrudnik.Sotrudnik1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AUP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BazTarStavka.Stavka)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Razr.Razr1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kol)
+                </td>
+                <td style="background-color:#EFF5FB">
+                    @Html.DisplayFor(modelItem => item.VsegoZarpl)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.C0_931_07)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KtVisKval)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KtTehVid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KtHarSpec)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KtFilial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KtZaKateg)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KtZaStarsh)
+                </td>
+                <td style="background-color:#EFF5FB">
+                    @Html.DisplayFor(modelItem => item.OkladPovish)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KtZaContract)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Post1748)
+                </td>
+                <td style="background-color:#EFF5FB">
+                    @Html.DisplayFor(modelItem => item.DoljnOklad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KtZaProfMast)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KtZaVisDostij)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KtProchaya)
+                </td>
+                <td style="background-color:#EFF5FB">
+                    @Html.DisplayFor(modelItem => item.Itog)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Datein)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dateout)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Priznak)
+                </td>
+                <td>
+                    <button type="button" class="btn btn-icon waves-effect waves-light btn-success" onclick="IndexEdite(@item.IDVac)"> <i class="mdi mdi-settings"></i>Редактировать</button>
+                    <button type="button" class="btn btn-icon waves-effect waves-light btn-danger" onclick="DeleteSelectVac(@item.IDVac)"> <i class="mdi mdi-delete"></i>Удалить</button>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+
+

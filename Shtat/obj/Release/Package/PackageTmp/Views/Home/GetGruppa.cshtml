@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Shtat.Models.Gruppa>
+<select id="gruppa" name="gruppa" class="form-control">
+    <option selected value="0">Выберите группу</option>
+    @foreach (var item in Model)
+    {
+        <option value="@item.IDgr">@item.Gruppa1</option>
+    }
+</select>
+
+
+<script>
+    $(function gr() {
+        $('#gruppa').change(function gr() {
+            var ID = $(this).val();
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("GetUch")/' + ID,
+                success: function gr(data) {
+                    $('#uch').replaceWith(data);
+                }
+            });
+        });
+    })
+
+</script>

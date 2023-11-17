@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Shtat.Models.Uchastok>
+    <select id="uch" name="uch" class="form-control">
+    <option selected value="0">Выберите участок</option>
+    @foreach (var item in Model)
+    {
+        <option value="@item.IDuch">@item.Uchastok1</option>
+    }
+</select>
+
+@*<script>
+    $(function gr() {
+        $('#uch').change(function gr() {
+            var ID = $(this).val();
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("GetOtdel")/' + ID,
+                success: function gr(data) {
+                    $('#otdel').replaceWith(data);
+                }
+            });
+        });
+    })
+
+</script>*@

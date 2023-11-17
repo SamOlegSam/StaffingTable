@@ -1,0 +1,27 @@
+﻿@model Shtat.Models.Razr
+
+<div class="modal-header">
+    <h5> Редактирование разряда МК</h5>
+</div>
+<div class="modal-body">
+    <label>Разряд</label>
+    <input type="text" class="form-control btn-block" id="razr" value="@Model.Razr1" />
+
+    <label>Разряд по ЕТС</label>
+    <input type="text" class="form-control btn-block" id="ETC" value="@Model.RazrETC" />
+
+    <label>Межразрядный коэффициент</label>
+    <input type="text" class="form-control btn-block" id="mk" value="@Model.MK" />
+    
+    <label>Дата ввода</label>
+    <input type="text" class="form-control btn-block" id="datvvoda" value="@Model.Datein" />
+
+    <label>Дата закрытия</label>
+    <input type="text" class="form-control btn-block" id="datzak" value="@Model.Dateout" />
+
+</div>
+<div class="modal-footer" style="text-align:center">
+    <button type="submit" class="btn btn-success" style="min-width:100px" onclick="RazrSave(@Model.IDRazr)">Сохранить</button>
+    <button type="button" class="btn btn-default" data-dismiss="modal" style="min-width:100px">Отмена</button>
+</div>
+

@@ -1,0 +1,25 @@
+﻿@model IEnumerable<string>
+<select id="otdel" name="otdel" class="form-control">
+    <option selected value="0">Выберите отдел</option>
+    @foreach (var item in Model)
+    {
+        <option value="@item">@item</option>
+    }
+</select>
+
+
+<script>
+    $(function gr() {
+        $('#otdel').change(function gr() {
+            var ID = $(this).val();
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("GetGruppa2")/' + ID,
+                success: function gr(data) {
+                    $('#gruppa').replaceWith(data);
+                }
+            });
+        });
+    })
+
+</script>

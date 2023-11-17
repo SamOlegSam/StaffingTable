@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Shtat.Models.Sotrudnik>
+
+@{
+    ViewBag.Title = "About";
+}
+
+<div id="ServicesModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content" id='ServicesModalContent'>
+
+        </div>
+    </div>
+</div>
+
+<div id="ServicesModalDelete" class="modal fade">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content" id='ServicesModalDeleteContent'>
+
+        </div>
+    </div>
+</div>
+
+
+<style type="text/css">
+    TH {
+        background: #EFF5FB; /* Цвет фона */
+        border-bottom: double;
+    }
+
+    tr:nth-child(odd) {
+        background: #EFF5FB; /* Цвет фона */
+    }
+
+    tr:nth-child(even) {
+        background: #ffffff; /* Цвет фона */
+    }
+</style>
+
+
+
+
+
+
+
+<h3 contenteditable="true">Сотрудники</h3>
+
+<p>
+    <button type="button" class="btn btn-gradient waves-light waves-effect w-xs" onclick="SotrudnikAdd(0)"> Добавить сотрудника</button>
+</p>
+
+<table class="table">   <tr>
+        <th>
+            @Html.ActionLink("Сотрудники", "About", new { sortSotr = ViewBag.SotrudSortParm })
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sotrudnik1)
+        </td>
+        <td>
+            <button type="button" class="btn btn-icon waves-effect waves-light btn-success" onclick="SotrudnikEdit(@item.IDSot)"> <i class="mdi mdi-settings"></i>Редактировать</button>
+            <button type="button" class="btn btn-icon waves-effect waves-light btn-danger"  onclick="DeleteSelectSotrudnik(@item.IDSot)"> <i class="mdi mdi-delete"></i>Удалить</button>
+        </td>
+    </tr>
+}
+
+</table>

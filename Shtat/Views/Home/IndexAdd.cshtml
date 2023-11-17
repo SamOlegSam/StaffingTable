@@ -1,0 +1,153 @@
+﻿@model Shtat.Models.vacancy
+
+<div class="modal-header">
+    <h5> Создание новой записи</h5>
+</div>
+<div class="modal-body">
+            
+    <label>Подразделение</label>
+    @Html.DropDownList("Podrazd", ViewBag.ppp as SelectList, "Выберите подразделение", new { @class = "form-control btn-block", id = "pppp" })
+     
+           
+    @*<label>Отдел</label>
+    <select id="otdel" name="otdel1" class="form-control">
+        <option selected value="">Выберите отдел</option>
+    </select>*@
+    
+    <label>Отдел</label>
+    <select id="otdel" name="otdel1" class="form-control">
+        <option selected value="0">Выберите отдел</option>
+    </select>
+           
+    
+        @*<label>Группа</label>
+    <select class="form-control btn-block" id="gruppa">
+        @foreach (var Gr in ViewBag.gr)
+        {
+            <option value="@Gr.IDgr"> @Gr.Gruppa1 </option>
+        }
+    </select>*@
+
+    <label>Группа</label>
+    <select id="gruppa" name="gruppa" class="form-control">
+        <option selected value="0">Выберите группу</option>
+    </select>
+
+
+        @*<label>Участок</label>
+    <select class="form-control btn-block" id="uch">
+        @foreach (var Uch in ViewBag.uch)
+        {
+            <option value="@Uch.IDuch"> @Uch.Uchastok1 </option>
+        }
+    </select>*@
+
+    <label>Участок</label>
+    <select id="uch" name="uch" class="form-control">
+        <option selected value="0">Выберите участок</option>
+    </select>
+
+    <label>Код ОКРБ</label>
+    <select class="form-control btn-block" id="kod">
+        @foreach (var kod in ViewBag.kod)
+        {
+            <option value="@kod.IDkod"> @kod.OKRB1 </option>
+        }
+    </select>
+    
+        <label>Должность</label>
+    <select class="form-control btn-block" id="dolj">
+        @foreach (var dol in ViewBag.dolj)
+        {
+            <option value="@dol.IDDolj"> @dol.Doljnost1 </option>
+        }
+    </select>
+    <label>Сотрудник</label>
+    <select class="form-control btn-block" id="sot">
+        @foreach (var sotr in ViewBag.sot)
+        {
+            <option value="@sotr.IDSot"> @sotr.Sotrudnik1 </option>
+        }
+    </select>
+        <label>АУП</label>
+        <input type="text" class="form-control btn-block" id="aup" />
+        <label>Группа/БТС</label>
+    <select class="form-control btn-block" id="stav">
+        @foreach (var Bts in ViewBag.bts)
+        {
+            if (@Bts.Dateout==null)
+            {
+            <option value="@Bts.IDStavka"> @Bts.Gruppa </option>
+            }
+        }
+    </select>
+        <label>Разряд/Разряд по ЕТС</label>
+        
+    <select class="form-control btn-block" id="razr">
+        @foreach (var razr in ViewBag.razr)
+        {
+            <option value="@razr.IDRazr"> @razr.Razr1 </option>
+        }
+    </select>
+
+        <label>Количество</label>
+        <input type="text" class="form-control btn-block" id="kol"/>
+        <label>Всего зарплата</label>
+        <input type="text" class="form-control btn-block" id="vsego"/>
+        <label>с 0.93 по 1.07</label>
+        <input type="text" class="form-control btn-block" id="c_093_107"/>
+        <label>За высокую квалификацию</label>
+        <input type="text" class="form-control btn-block" id="zaviskv"/>
+        <label>За техвид</label>
+        <input type="text" class="form-control btn-block" id="zatehvid"/>
+        <label>За харспец</label>
+        <input type="text" class="form-control btn-block" id="zaharspec"/>
+        <label>За филиал</label>
+        <input type="text" class="form-control btn-block" id="zafilial"/>
+        <label>За категорию</label>
+        <input type="text" class="form-control btn-block" id="zakateg"/>
+        <label>За старший</label>
+        <input type="text" class="form-control btn-block" id="zastar"/>
+        <label>Оклад повышенный</label>
+        <input type="text" class="form-control btn-block" id="okladpov"/>
+        <label>За контракт</label>
+        <input type="text" class="form-control btn-block" id="zakontrakt"/>
+        <label>Постановление 1748</label>
+        <input type="text" class="form-control btn-block" id="za1748"/>
+        <label>Должностной оклад</label>
+        <input type="text" class="form-control btn-block" id="okladdol"/>
+        <label>За профмастерство</label>
+        <input type="text" class="form-control btn-block" id="zaprof"/>
+        <label>За высокие достижения</label>
+        <input type="text" class="form-control btn-block" id="zavisdost"/>
+        <label>Надбавка прочая</label>
+        <input type="text" class="form-control btn-block" id="proch"/>
+        <label>ИТОГ</label>
+        <input type="text" class="form-control btn-block" id="itog"/>
+        <label>Дата начала</label>
+        <input type="text" class="form-control btn-block" data-ride="datain"/>
+        <label>Дата окончания</label>
+        <input type="text" class="form-control btn-block" id="dataout" />
+        <label>Признак</label>
+        <input type="text" class="form-control btn-block" id="priznak"/>
+
+</div>
+<div class="modal-footer" style="text-align:center">
+    <button type="submit" class="btn btn-success" style="min-width:100px" onclick="SaveIndex()">Сохранить</button>
+    <button type="button" class="btn btn-default" data-dismiss="modal" style="min-width:100px">Отмена</button>
+</div>
+
+<script>
+    $(function () {
+    $('#pppp').change(function() {
+        var ID = $(this).val();
+        $.ajax({
+            type: 'GET',
+            url: '@Url.Action("GetOtdel1")/' + ID,
+            success: function (data) {
+                $('#otdel').replaceWith(data);
+            }
+        });
+    });
+    })
+</script>

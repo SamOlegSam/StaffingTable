@@ -1,0 +1,200 @@
+﻿@model Shtat.Models.vacancy
+
+
+<div class="modal-header">
+    <h5> Редактирование записи</h5>
+</div>
+<div class="modal-body">
+
+    <label>ID записи</label>
+    <input type="text" class="form-control btn-block" id="ID" value="@Model.IDVac" />
+
+    <label>Подразделение</label>
+
+    <select class="form-control btn-block" contenteditable="true" id="Podrazd">
+        @foreach (var podr in ViewBag.Podr)
+        {
+            if(@podr.IDp == @Model.IDPodrPr)
+            {
+                <option value="@podr.IDp" selected> @podr.Podrazd</option>
+            }
+            else
+            {
+                <option value="@podr.IDp"> @podr.Podrazd</option>
+            }
+        }
+    </select>
+    
+    <label>Отдел</label>
+    <select class="form-control btn-block" contenteditable="true" id="otdel">
+        @foreach (var podr in ViewBag.Otd)
+        {
+            if (@podr.IDot == @Model.IDPodrOtd)
+            {
+                <option value="@podr.IDot" selected> @podr.Otdel1</option>
+            }
+            else
+            {
+                <option value="@podr.IDot"> @podr.Otdel1</option>
+            }
+        }
+    </select>
+
+    <label>Группа</label>
+    <select class="form-control btn-block" contenteditable="true" id="gruppa">
+        @foreach (var podr in ViewBag.gr)
+        {
+            if (@podr.IDgr == @Model.IDPodrPodr)
+            {
+                <option value="@podr.IDgr" selected> @podr.Gruppa1</option>
+            }
+            else
+            {
+                <option value="@podr.IDgr"> @podr.Gruppa1</option>
+            }
+        }
+    </select>
+    
+    <label>Участок</label>
+    <select class="form-control btn-block" contenteditable="true" id="uch">
+        @foreach (var podr in ViewBag.uch)
+        {
+            if (@podr.IDuch == @Model.IDPodrUch)
+            {
+                <option value="@podr.IDuch" selected> @podr.Uchastok1</option>
+            }
+            else
+            {
+                <option value="@podr.IDuch"> @podr.Uchastok1</option>
+            }
+        }
+    </select>
+
+    <label>Код ОКРБ</label>
+    <select class="form-control btn-block" contenteditable="true" id="kod">
+        @foreach (var kod in ViewBag.kod)
+        {
+            if (@kod.IDkod == @Model.IDOKRB)
+            {
+                <option value="@kod.IDkod" selected> @kod.OKRB1</option>
+            }
+            else
+            {
+                <option value="@kod.IDkod"> @kod.OKRB1</option>
+            }
+        }
+    </select>
+    
+    <label>Должность</label>
+    <select class="form-control btn-block" contenteditable="true" id="dolj">
+        @foreach (var dolj in ViewBag.dolj)
+        {
+            if (@dolj.IDDolj == @Model.IDDolj)
+            {
+                <option value="@dolj.IDDolj" selected> @dolj.Doljnost1</option>
+            }
+            else
+            {
+                <option value="@dolj.IDDolj"> @dolj.Doljnost1</option>
+            }
+        }
+    </select>
+    
+    <label>Сотрудник</label>
+
+    <select class="form-control btn-block" contenteditable="true" id="sot">
+        @foreach (var sotr in ViewBag.sotr)
+        {
+            if (@sotr.IDSot == @Model.IDSotr)
+            {
+                <option value="@sotr.IDSot" selected> @sotr.Sotrudnik1</option>
+            }
+            else
+            {
+                <option value="@sotr.IDSot"> @sotr.Sotrudnik1</option>
+            }
+        }
+    </select>
+    
+    <label>АУП</label>
+    <input type="text" class="form-control btn-block" id="AUP" value="@Model.AUP" />
+    
+    <label>Группа/БТС</label>
+    
+    <select class="form-control btn-block" contenteditable="true" id="stav">
+        @foreach (var bts in ViewBag.bts)
+        {
+            if (@bts.IDStavka == @Model.IDStav)
+            {
+                <option value="@bts.IDStavka" selected> @bts.Gruppa</option>
+            }
+            else
+            {
+                <option value="@bts.IDStavka"> @bts.Gruppa</option>
+            }
+        }
+    </select>
+    
+    <label>Разряд/Разряд по ЕТС</label>
+    
+    <select class="form-control btn-block" contenteditable="true" id="razr">
+        @foreach (var razr in ViewBag.razr)
+        {
+            if (@razr.IDRazr == @Model.IDRazr)
+            {
+                <option value="@razr.IDRazr" selected> @razr.Razr1</option>
+            }
+            else
+            {
+                <option value="@razr.IDRazr"> @razr.Razr1</option>
+            }
+        }
+    </select>
+    
+    <label>Количество</label>
+    <input type="text" class="form-control btn-block" id="Kol" value="@Model.Kol" />
+    <label>Всего зарплата</label>
+    <input type="text" class="form-control btn-block" id="vsego" value="@Model.VsegoZarpl" />
+    <label>с 0.93 по 1.07</label>
+    <input type="text" class="form-control btn-block" id="C_093_107" value="@Model.C0_931_07" />
+    <label>За высокую квалификацию</label>
+    <input type="text" class="form-control btn-block" id="zaviskv" value="@Model.KtVisKval" />
+    <label>За техвид</label>
+    <input type="text" class="form-control btn-block" id="zatehvid" value="@Model.KtTehVid" />
+    <label>За харспец</label>
+    <input type="text" class="form-control btn-block" id="zaharspec" value="@Model.KtHarSpec" />
+    <label>За филиал</label>
+    <input type="text" class="form-control btn-block" id="zafilial" value="@Model.KtFilial" />
+    <label>За категорию</label>
+    <input type="text" class="form-control btn-block" id="zakateg" value="@Model.KtZaKateg" />
+    <label>За старший</label>
+    <input type="text" class="form-control btn-block" id="zastar" value="@Model.KtZaStarsh" />
+    <label>Оклад повышенный</label>
+    <input type="text" class="form-control btn-block" id="okladpov" value="@Model.OkladPovish" />
+    <label>За контракт</label>
+    <input type="text" class="form-control btn-block" id="zakontrakt" value="@Model.KtZaContract" />
+    <label>Постановление 1748</label>
+    <input type="text" class="form-control btn-block" id="za1748" value="@Model.Post1748" />
+    <label>Должностной оклад</label>
+    <input type="text" class="form-control btn-block" id="okladdol" value="@Model.DoljnOklad" />
+    <label>За профмастерство</label>
+    <input type="text" class="form-control btn-block" id="zaprof" value="@Model.KtZaProfMast" />
+    <label>За высокие достижения</label>
+    <input type="text" class="form-control btn-block" id="zavisdost" value="@Model.KtZaVisDostij" />
+    <label>Надбавка прочая</label>
+    <input type="text" class="form-control btn-block" id="proch" value="@Model.KtProchaya" />
+    <label>ИТОГ</label>
+    <input type="text" class="form-control btn-block" id="itog" value="@Model.Itog" />
+    <label>Дата начала</label>
+    <input type="text" class="form-control btn-block" id="datain" value="@Model.Datein" />
+    <label>Дата окончания</label>
+    <input type="text" class="form-control btn-block" id="dataout" value="@Model.Dateout" />
+    <label>Признак</label>
+    <input type="text" class="form-control btn-block" id="priznak" value="@Model.Priznak" />
+
+</div>
+<div class="modal-footer" style="text-align:center">
+    <button type="submit" class="btn btn-success" style="min-width:100px" onclick="SaveIndexEdite(@Model.IDVac)">Сохранить</button>
+    <button type="button" class="btn btn-default" data-dismiss="modal" style="min-width:100px">Отмена</button>
+</div>
+

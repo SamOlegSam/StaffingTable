@@ -1,0 +1,1036 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище shtatModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BazTarStavka">
+          <Key>
+            <PropertyRef Name="IDStavka" />
+          </Key>
+          <Property Name="IDStavka" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Gruppa" Type="int" />
+          <Property Name="Stavka" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Datein" Type="date" />
+          <Property Name="Dateout" Type="date" />
+          <Property Name="Priznak" Type="int" />
+        </EntityType>
+        <EntityType Name="Doljnost">
+          <Key>
+            <PropertyRef Name="IDDolj" />
+          </Key>
+          <Property Name="IDDolj" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Doljnost" Type="nvarchar" MaxLength="255" />
+          <Property Name="Datein" Type="date" />
+          <Property Name="Dateout" Type="date" />
+          <Property Name="Priznak" Type="int" />
+        </EntityType>
+        <EntityType Name="Gruppa">
+          <Key>
+            <PropertyRef Name="IDgr" />
+          </Key>
+          <Property Name="IDgr" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Gruppa" Type="nchar" MaxLength="255" />
+          <Property Name="IDOtdel" Type="int" />
+        </EntityType>
+        <EntityType Name="History">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Podrazd" Type="nvarchar(max)" />
+          <Property Name="Otdel" Type="nvarchar(max)" />
+          <Property Name="Gruppa" Type="nvarchar(max)" />
+          <Property Name="Uch" Type="nvarchar(max)" />
+          <Property Name="Dolj" Type="nvarchar(max)" />
+          <Property Name="Sotr" Type="nvarchar(max)" />
+          <Property Name="AUP" Type="nvarchar(max)" />
+          <Property Name="Bts" Type="nvarchar(max)" />
+          <Property Name="Kol" Type="nvarchar(max)" />
+          <Property Name="Vsego" Type="nvarchar(max)" />
+          <Property Name="093107" Type="nvarchar(max)" />
+          <Property Name="VisKval" Type="nvarchar(max)" />
+          <Property Name="TehVid" Type="nvarchar(max)" />
+          <Property Name="HarSpec" Type="nvarchar(max)" />
+          <Property Name="ZaFil" Type="nvarchar(max)" />
+          <Property Name="ZaKat" Type="nvarchar(max)" />
+          <Property Name="ZaStar" Type="nvarchar(max)" />
+          <Property Name="OkPov" Type="nvarchar(max)" />
+          <Property Name="ZaKontr" Type="nvarchar(max)" />
+          <Property Name="1748" Type="nvarchar(max)" />
+          <Property Name="DoljOk" Type="nvarchar(max)" />
+          <Property Name="ProfMast" Type="nvarchar(max)" />
+          <Property Name="VisDost" Type="nvarchar(max)" />
+          <Property Name="Proch" Type="nvarchar(max)" />
+          <Property Name="Itog" Type="nvarchar(max)" />
+          <Property Name="Dat" Type="datetime" />
+          <Property Name="Priznak" Type="nvarchar(max)" />
+          <Property Name="OKRB" Type="nvarchar(max)" />
+          <Property Name="PrizOtdel" Type="int" />
+          <Property Name="PrizDolj" Type="int" />
+        </EntityType>
+        <EntityType Name="HistoryDat">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HisDat" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="OKRB">
+          <Key>
+            <PropertyRef Name="IDkod" />
+          </Key>
+          <Property Name="IDkod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OKRB" Type="char" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Organiz">
+          <Key>
+            <PropertyRef Name="IDOrg" />
+          </Key>
+          <Property Name="IDOrg" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDPodrUp" Type="int" />
+          <Property Name="IDPodr" Type="int" />
+          <Property Name="IDTip" Type="int" />
+          <Property Name="Datein" Type="date" />
+          <Property Name="Dateout" Type="date" />
+          <Property Name="Priznak" Type="int" />
+        </EntityType>
+        <EntityType Name="Otdel">
+          <Key>
+            <PropertyRef Name="IDot" />
+          </Key>
+          <Property Name="IDot" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Otdel" Type="nchar" MaxLength="255" />
+          <Property Name="IDpodr" Type="int" />
+          <Property Name="priznak" Type="int" />
+        </EntityType>
+        <EntityType Name="Podrazdel">
+          <Key>
+            <PropertyRef Name="IDp" />
+          </Key>
+          <Property Name="IDp" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Podrazd" Type="nchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Razr">
+          <Key>
+            <PropertyRef Name="IDRazr" />
+          </Key>
+          <Property Name="IDRazr" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Razr" Type="int" />
+          <Property Name="RazrETC" Type="int" />
+          <Property Name="MK" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Datein" Type="date" />
+          <Property Name="Dateout" Type="date" />
+          <Property Name="Priznak" Type="int" />
+        </EntityType>
+        <EntityType Name="Sotrudnik">
+          <Key>
+            <PropertyRef Name="IDSot" />
+          </Key>
+          <Property Name="IDSot" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sotrudnik" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Uchastok">
+          <Key>
+            <PropertyRef Name="IDuch" />
+          </Key>
+          <Property Name="IDuch" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Uchastok" Type="nchar" MaxLength="255" />
+          <Property Name="IDGrup" Type="int" />
+        </EntityType>
+        <EntityType Name="vacancy">
+          <Key>
+            <PropertyRef Name="IDVac" />
+          </Key>
+          <Property Name="IDVac" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDPodrPr" Type="int" />
+          <Property Name="IDPodrOtd" Type="int" />
+          <Property Name="IDPodrPodr" Type="int" />
+          <Property Name="IDPodrUch" Type="int" />
+          <Property Name="IDDolj" Type="int" />
+          <Property Name="IDSotr" Type="int" />
+          <Property Name="AUP" Type="char" MaxLength="10" />
+          <Property Name="IDRazr" Type="int" />
+          <Property Name="IDStav" Type="int" />
+          <Property Name="Kol" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="VsegoZarpl" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="0.931.07" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="KtVisKval" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="KtTehVid" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="KtHarSpec" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="KtFilial" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="KtZaKateg" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="KtZaStarsh" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OkladPovish" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="KtZaContract" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Post1748" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="DoljnOklad" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="KtZaProfMast" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="KtZaVisDostij" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="KtProchaya" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Itog" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Datein" Type="date" />
+          <Property Name="Dateout" Type="date" />
+          <Property Name="Priznak" Type="nchar" MaxLength="10" />
+          <Property Name="IDOKRB" Type="int" />
+        </EntityType>
+        <Association Name="FK_Gruppa_Otdel">
+          <End Role="Otdel" Type="Self.Otdel" Multiplicity="0..1" />
+          <End Role="Gruppa" Type="Self.Gruppa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Otdel">
+              <PropertyRef Name="IDot" />
+            </Principal>
+            <Dependent Role="Gruppa">
+              <PropertyRef Name="IDOtdel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Otdel_Podrazdel">
+          <End Role="Podrazdel" Type="Self.Podrazdel" Multiplicity="0..1" />
+          <End Role="Otdel" Type="Self.Otdel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Podrazdel">
+              <PropertyRef Name="IDp" />
+            </Principal>
+            <Dependent Role="Otdel">
+              <PropertyRef Name="IDpodr" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Uchastok_Gruppa">
+          <End Role="Gruppa" Type="Self.Gruppa" Multiplicity="0..1" />
+          <End Role="Uchastok" Type="Self.Uchastok" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gruppa">
+              <PropertyRef Name="IDgr" />
+            </Principal>
+            <Dependent Role="Uchastok">
+              <PropertyRef Name="IDGrup" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vacancy_BazTarStavka">
+          <End Role="BazTarStavka" Type="Self.BazTarStavka" Multiplicity="0..1" />
+          <End Role="vacancy" Type="Self.vacancy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BazTarStavka">
+              <PropertyRef Name="IDStavka" />
+            </Principal>
+            <Dependent Role="vacancy">
+              <PropertyRef Name="IDStav" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vacancy_Doljnost">
+          <End Role="Doljnost" Type="Self.Doljnost" Multiplicity="0..1" />
+          <End Role="vacancy" Type="Self.vacancy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doljnost">
+              <PropertyRef Name="IDDolj" />
+            </Principal>
+            <Dependent Role="vacancy">
+              <PropertyRef Name="IDDolj" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vacancy_Gruppa">
+          <End Role="Gruppa" Type="Self.Gruppa" Multiplicity="0..1" />
+          <End Role="vacancy" Type="Self.vacancy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gruppa">
+              <PropertyRef Name="IDgr" />
+            </Principal>
+            <Dependent Role="vacancy">
+              <PropertyRef Name="IDPodrPodr" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vacancy_OKRB">
+          <End Role="OKRB" Type="Self.OKRB" Multiplicity="0..1" />
+          <End Role="vacancy" Type="Self.vacancy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OKRB">
+              <PropertyRef Name="IDkod" />
+            </Principal>
+            <Dependent Role="vacancy">
+              <PropertyRef Name="IDOKRB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vacancy_Otdel">
+          <End Role="Otdel" Type="Self.Otdel" Multiplicity="0..1" />
+          <End Role="vacancy" Type="Self.vacancy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Otdel">
+              <PropertyRef Name="IDot" />
+            </Principal>
+            <Dependent Role="vacancy">
+              <PropertyRef Name="IDPodrOtd" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vacancy_Podrazdel">
+          <End Role="Podrazdel" Type="Self.Podrazdel" Multiplicity="0..1" />
+          <End Role="vacancy" Type="Self.vacancy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Podrazdel">
+              <PropertyRef Name="IDp" />
+            </Principal>
+            <Dependent Role="vacancy">
+              <PropertyRef Name="IDPodrPr" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vacancy_Razr">
+          <End Role="Razr" Type="Self.Razr" Multiplicity="0..1" />
+          <End Role="vacancy" Type="Self.vacancy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Razr">
+              <PropertyRef Name="IDRazr" />
+            </Principal>
+            <Dependent Role="vacancy">
+              <PropertyRef Name="IDRazr" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vacancy_Sotrudnik">
+          <End Role="Sotrudnik" Type="Self.Sotrudnik" Multiplicity="0..1" />
+          <End Role="vacancy" Type="Self.vacancy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sotrudnik">
+              <PropertyRef Name="IDSot" />
+            </Principal>
+            <Dependent Role="vacancy">
+              <PropertyRef Name="IDSotr" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vacancy_Uchastok">
+          <End Role="Uchastok" Type="Self.Uchastok" Multiplicity="0..1" />
+          <End Role="vacancy" Type="Self.vacancy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uchastok">
+              <PropertyRef Name="IDuch" />
+            </Principal>
+            <Dependent Role="vacancy">
+              <PropertyRef Name="IDPodrUch" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище shtatModelContainer">
+          <EntitySet Name="BazTarStavka" EntityType="Self.BazTarStavka" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Doljnost" EntityType="Self.Doljnost" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gruppa" EntityType="Self.Gruppa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="History" EntityType="Self.History" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HistoryDat" EntityType="Self.HistoryDat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OKRB" EntityType="Self.OKRB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Organiz" EntityType="Self.Organiz" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Otdel" EntityType="Self.Otdel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Podrazdel" EntityType="Self.Podrazdel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Razr" EntityType="Self.Razr" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sotrudnik" EntityType="Self.Sotrudnik" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Uchastok" EntityType="Self.Uchastok" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vacancy" EntityType="Self.vacancy" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Gruppa_Otdel" Association="Self.FK_Gruppa_Otdel">
+            <End Role="Otdel" EntitySet="Otdel" />
+            <End Role="Gruppa" EntitySet="Gruppa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Otdel_Podrazdel" Association="Self.FK_Otdel_Podrazdel">
+            <End Role="Podrazdel" EntitySet="Podrazdel" />
+            <End Role="Otdel" EntitySet="Otdel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Uchastok_Gruppa" Association="Self.FK_Uchastok_Gruppa">
+            <End Role="Gruppa" EntitySet="Gruppa" />
+            <End Role="Uchastok" EntitySet="Uchastok" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vacancy_BazTarStavka" Association="Self.FK_vacancy_BazTarStavka">
+            <End Role="BazTarStavka" EntitySet="BazTarStavka" />
+            <End Role="vacancy" EntitySet="vacancy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vacancy_Doljnost" Association="Self.FK_vacancy_Doljnost">
+            <End Role="Doljnost" EntitySet="Doljnost" />
+            <End Role="vacancy" EntitySet="vacancy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vacancy_Gruppa" Association="Self.FK_vacancy_Gruppa">
+            <End Role="Gruppa" EntitySet="Gruppa" />
+            <End Role="vacancy" EntitySet="vacancy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vacancy_OKRB" Association="Self.FK_vacancy_OKRB">
+            <End Role="OKRB" EntitySet="OKRB" />
+            <End Role="vacancy" EntitySet="vacancy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vacancy_Otdel" Association="Self.FK_vacancy_Otdel">
+            <End Role="Otdel" EntitySet="Otdel" />
+            <End Role="vacancy" EntitySet="vacancy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vacancy_Podrazdel" Association="Self.FK_vacancy_Podrazdel">
+            <End Role="Podrazdel" EntitySet="Podrazdel" />
+            <End Role="vacancy" EntitySet="vacancy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vacancy_Razr" Association="Self.FK_vacancy_Razr">
+            <End Role="Razr" EntitySet="Razr" />
+            <End Role="vacancy" EntitySet="vacancy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vacancy_Sotrudnik" Association="Self.FK_vacancy_Sotrudnik">
+            <End Role="Sotrudnik" EntitySet="Sotrudnik" />
+            <End Role="vacancy" EntitySet="vacancy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vacancy_Uchastok" Association="Self.FK_vacancy_Uchastok">
+            <End Role="Uchastok" EntitySet="Uchastok" />
+            <End Role="vacancy" EntitySet="vacancy" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="shtatModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BazTarStavka">
+          <Key>
+            <PropertyRef Name="IDStavka" />
+          </Key>
+          <Property Name="IDStavka" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Gruppa" Type="Int32" />
+          <Property Name="Stavka" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Datein" Type="DateTime" Precision="0" />
+          <Property Name="Dateout" Type="DateTime" Precision="0" />
+          <Property Name="Priznak" Type="Int32" />
+          <NavigationProperty Name="vacancy" Relationship="Self.FK_vacancy_BazTarStavka" FromRole="BazTarStavka" ToRole="vacancy" />
+        </EntityType>
+        <EntityType Name="Doljnost">
+          <Key>
+            <PropertyRef Name="IDDolj" />
+          </Key>
+          <Property Name="IDDolj" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Doljnost1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Datein" Type="DateTime" Precision="0" />
+          <Property Name="Dateout" Type="DateTime" Precision="0" />
+          <Property Name="Priznak" Type="Int32" />
+          <NavigationProperty Name="vacancy" Relationship="Self.FK_vacancy_Doljnost" FromRole="Doljnost" ToRole="vacancy" />
+        </EntityType>
+        <EntityType Name="Gruppa">
+          <Key>
+            <PropertyRef Name="IDgr" />
+          </Key>
+          <Property Name="IDgr" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Gruppa1" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+          <Property Name="IDOtdel" Type="Int32" />
+          <NavigationProperty Name="Otdel" Relationship="Self.FK_Gruppa_Otdel" FromRole="Gruppa" ToRole="Otdel" />
+          <NavigationProperty Name="Uchastok" Relationship="Self.FK_Uchastok_Gruppa" FromRole="Gruppa" ToRole="Uchastok" />
+          <NavigationProperty Name="vacancy" Relationship="Self.FK_vacancy_Gruppa" FromRole="Gruppa" ToRole="vacancy" />
+        </EntityType>
+        <EntityType Name="History">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Podrazd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Otdel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Gruppa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Uch" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Dolj" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Sotr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AUP" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Bts" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Kol" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Vsego" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C093107" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VisKval" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TehVid" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HarSpec" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ZaFil" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ZaKat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ZaStar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OkPov" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ZaKontr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C1748" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DoljOk" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProfMast" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VisDost" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Proch" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Itog" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Dat" Type="DateTime" Precision="3" />
+          <Property Name="Priznak" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OKRB" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PrizOtdel" Type="Int32" />
+          <Property Name="PrizDolj" Type="Int32" />
+        </EntityType>
+        <EntityType Name="HistoryDat">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HisDat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="OKRB">
+          <Key>
+            <PropertyRef Name="IDkod" />
+          </Key>
+          <Property Name="IDkod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OKRB1" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="vacancy" Relationship="Self.FK_vacancy_OKRB" FromRole="OKRB" ToRole="vacancy" />
+        </EntityType>
+        <EntityType Name="Organiz">
+          <Key>
+            <PropertyRef Name="IDOrg" />
+          </Key>
+          <Property Name="IDOrg" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDPodrUp" Type="Int32" />
+          <Property Name="IDPodr" Type="Int32" />
+          <Property Name="IDTip" Type="Int32" />
+          <Property Name="Datein" Type="DateTime" Precision="0" />
+          <Property Name="Dateout" Type="DateTime" Precision="0" />
+          <Property Name="Priznak" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Otdel">
+          <Key>
+            <PropertyRef Name="IDot" />
+          </Key>
+          <Property Name="IDot" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Otdel1" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+          <Property Name="IDpodr" Type="Int32" />
+          <Property Name="priznak" Type="Int32" />
+          <NavigationProperty Name="Gruppa" Relationship="Self.FK_Gruppa_Otdel" FromRole="Otdel" ToRole="Gruppa" />
+          <NavigationProperty Name="Podrazdel" Relationship="Self.FK_Otdel_Podrazdel" FromRole="Otdel" ToRole="Podrazdel" />
+          <NavigationProperty Name="vacancy" Relationship="Self.FK_vacancy_Otdel" FromRole="Otdel" ToRole="vacancy" />
+        </EntityType>
+        <EntityType Name="Podrazdel">
+          <Key>
+            <PropertyRef Name="IDp" />
+          </Key>
+          <Property Name="IDp" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Podrazd" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Otdel" Relationship="Self.FK_Otdel_Podrazdel" FromRole="Podrazdel" ToRole="Otdel" />
+          <NavigationProperty Name="vacancy" Relationship="Self.FK_vacancy_Podrazdel" FromRole="Podrazdel" ToRole="vacancy" />
+        </EntityType>
+        <EntityType Name="Razr">
+          <Key>
+            <PropertyRef Name="IDRazr" />
+          </Key>
+          <Property Name="IDRazr" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Razr1" Type="Int32" />
+          <Property Name="RazrETC" Type="Int32" />
+          <Property Name="MK" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Datein" Type="DateTime" Precision="0" />
+          <Property Name="Dateout" Type="DateTime" Precision="0" />
+          <Property Name="Priznak" Type="Int32" />
+          <NavigationProperty Name="vacancy" Relationship="Self.FK_vacancy_Razr" FromRole="Razr" ToRole="vacancy" />
+        </EntityType>
+        <EntityType Name="Sotrudnik">
+          <Key>
+            <PropertyRef Name="IDSot" />
+          </Key>
+          <Property Name="IDSot" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sotrudnik1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="vacancy" Relationship="Self.FK_vacancy_Sotrudnik" FromRole="Sotrudnik" ToRole="vacancy" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Uchastok">
+          <Key>
+            <PropertyRef Name="IDuch" />
+          </Key>
+          <Property Name="IDuch" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Uchastok1" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+          <Property Name="IDGrup" Type="Int32" />
+          <NavigationProperty Name="Gruppa" Relationship="Self.FK_Uchastok_Gruppa" FromRole="Uchastok" ToRole="Gruppa" />
+          <NavigationProperty Name="vacancy" Relationship="Self.FK_vacancy_Uchastok" FromRole="Uchastok" ToRole="vacancy" />
+        </EntityType>
+        <EntityType Name="vacancy">
+          <Key>
+            <PropertyRef Name="IDVac" />
+          </Key>
+          <Property Name="IDVac" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDPodrPr" Type="Int32" />
+          <Property Name="IDPodrOtd" Type="Int32" />
+          <Property Name="IDPodrPodr" Type="Int32" />
+          <Property Name="IDPodrUch" Type="Int32" />
+          <Property Name="IDDolj" Type="Int32" />
+          <Property Name="IDSotr" Type="Int32" />
+          <Property Name="AUP" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="IDRazr" Type="Int32" />
+          <Property Name="IDStav" Type="Int32" />
+          <Property Name="Kol" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="VsegoZarpl" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="C0_931_07" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="KtVisKval" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="KtTehVid" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="KtHarSpec" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="KtFilial" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="KtZaKateg" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="KtZaStarsh" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OkladPovish" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="KtZaContract" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Post1748" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DoljnOklad" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="KtZaProfMast" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="KtZaVisDostij" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="KtProchaya" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Itog" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Datein" Type="DateTime" Precision="0" />
+          <Property Name="Dateout" Type="DateTime" Precision="0" />
+          <Property Name="Priznak" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="IDOKRB" Type="Int32" />
+          <NavigationProperty Name="BazTarStavka" Relationship="Self.FK_vacancy_BazTarStavka" FromRole="vacancy" ToRole="BazTarStavka" />
+          <NavigationProperty Name="Doljnost" Relationship="Self.FK_vacancy_Doljnost" FromRole="vacancy" ToRole="Doljnost" />
+          <NavigationProperty Name="Gruppa" Relationship="Self.FK_vacancy_Gruppa" FromRole="vacancy" ToRole="Gruppa" />
+          <NavigationProperty Name="OKRB" Relationship="Self.FK_vacancy_OKRB" FromRole="vacancy" ToRole="OKRB" />
+          <NavigationProperty Name="Otdel" Relationship="Self.FK_vacancy_Otdel" FromRole="vacancy" ToRole="Otdel" />
+          <NavigationProperty Name="Podrazdel" Relationship="Self.FK_vacancy_Podrazdel" FromRole="vacancy" ToRole="Podrazdel" />
+          <NavigationProperty Name="Razr" Relationship="Self.FK_vacancy_Razr" FromRole="vacancy" ToRole="Razr" />
+          <NavigationProperty Name="Sotrudnik" Relationship="Self.FK_vacancy_Sotrudnik" FromRole="vacancy" ToRole="Sotrudnik" />
+          <NavigationProperty Name="Uchastok" Relationship="Self.FK_vacancy_Uchastok" FromRole="vacancy" ToRole="Uchastok" />
+        </EntityType>
+        <Association Name="FK_vacancy_BazTarStavka">
+          <End Role="BazTarStavka" Type="Self.BazTarStavka" Multiplicity="0..1" />
+          <End Role="vacancy" Type="Self.vacancy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BazTarStavka">
+              <PropertyRef Name="IDStavka" />
+            </Principal>
+            <Dependent Role="vacancy">
+              <PropertyRef Name="IDStav" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vacancy_Doljnost">
+          <End Role="Doljnost" Type="Self.Doljnost" Multiplicity="0..1" />
+          <End Role="vacancy" Type="Self.vacancy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doljnost">
+              <PropertyRef Name="IDDolj" />
+            </Principal>
+            <Dependent Role="vacancy">
+              <PropertyRef Name="IDDolj" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gruppa_Otdel">
+          <End Role="Otdel" Type="Self.Otdel" Multiplicity="0..1" />
+          <End Role="Gruppa" Type="Self.Gruppa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Otdel">
+              <PropertyRef Name="IDot" />
+            </Principal>
+            <Dependent Role="Gruppa">
+              <PropertyRef Name="IDOtdel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Uchastok_Gruppa">
+          <End Role="Gruppa" Type="Self.Gruppa" Multiplicity="0..1" />
+          <End Role="Uchastok" Type="Self.Uchastok" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gruppa">
+              <PropertyRef Name="IDgr" />
+            </Principal>
+            <Dependent Role="Uchastok">
+              <PropertyRef Name="IDGrup" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vacancy_Gruppa">
+          <End Role="Gruppa" Type="Self.Gruppa" Multiplicity="0..1" />
+          <End Role="vacancy" Type="Self.vacancy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gruppa">
+              <PropertyRef Name="IDgr" />
+            </Principal>
+            <Dependent Role="vacancy">
+              <PropertyRef Name="IDPodrPodr" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vacancy_OKRB">
+          <End Role="OKRB" Type="Self.OKRB" Multiplicity="0..1" />
+          <End Role="vacancy" Type="Self.vacancy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OKRB">
+              <PropertyRef Name="IDkod" />
+            </Principal>
+            <Dependent Role="vacancy">
+              <PropertyRef Name="IDOKRB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Otdel_Podrazdel">
+          <End Role="Podrazdel" Type="Self.Podrazdel" Multiplicity="0..1" />
+          <End Role="Otdel" Type="Self.Otdel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Podrazdel">
+              <PropertyRef Name="IDp" />
+            </Principal>
+            <Dependent Role="Otdel">
+              <PropertyRef Name="IDpodr" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vacancy_Otdel">
+          <End Role="Otdel" Type="Self.Otdel" Multiplicity="0..1" />
+          <End Role="vacancy" Type="Self.vacancy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Otdel">
+              <PropertyRef Name="IDot" />
+            </Principal>
+            <Dependent Role="vacancy">
+              <PropertyRef Name="IDPodrOtd" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vacancy_Podrazdel">
+          <End Role="Podrazdel" Type="Self.Podrazdel" Multiplicity="0..1" />
+          <End Role="vacancy" Type="Self.vacancy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Podrazdel">
+              <PropertyRef Name="IDp" />
+            </Principal>
+            <Dependent Role="vacancy">
+              <PropertyRef Name="IDPodrPr" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vacancy_Razr">
+          <End Role="Razr" Type="Self.Razr" Multiplicity="0..1" />
+          <End Role="vacancy" Type="Self.vacancy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Razr">
+              <PropertyRef Name="IDRazr" />
+            </Principal>
+            <Dependent Role="vacancy">
+              <PropertyRef Name="IDRazr" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vacancy_Sotrudnik">
+          <End Role="Sotrudnik" Type="Self.Sotrudnik" Multiplicity="0..1" />
+          <End Role="vacancy" Type="Self.vacancy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sotrudnik">
+              <PropertyRef Name="IDSot" />
+            </Principal>
+            <Dependent Role="vacancy">
+              <PropertyRef Name="IDSotr" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vacancy_Uchastok">
+          <End Role="Uchastok" Type="Self.Uchastok" Multiplicity="0..1" />
+          <End Role="vacancy" Type="Self.vacancy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uchastok">
+              <PropertyRef Name="IDuch" />
+            </Principal>
+            <Dependent Role="vacancy">
+              <PropertyRef Name="IDPodrUch" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="shtatEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BazTarStavka" EntityType="Self.BazTarStavka" />
+          <EntitySet Name="Doljnost" EntityType="Self.Doljnost" />
+          <EntitySet Name="Gruppa" EntityType="Self.Gruppa" />
+          <EntitySet Name="History" EntityType="Self.History" />
+          <EntitySet Name="HistoryDat" EntityType="Self.HistoryDat" />
+          <EntitySet Name="OKRB" EntityType="Self.OKRB" />
+          <EntitySet Name="Organiz" EntityType="Self.Organiz" />
+          <EntitySet Name="Otdel" EntityType="Self.Otdel" />
+          <EntitySet Name="Podrazdel" EntityType="Self.Podrazdel" />
+          <EntitySet Name="Razr" EntityType="Self.Razr" />
+          <EntitySet Name="Sotrudnik" EntityType="Self.Sotrudnik" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Uchastok" EntityType="Self.Uchastok" />
+          <EntitySet Name="vacancy" EntityType="Self.vacancy" />
+          <AssociationSet Name="FK_vacancy_BazTarStavka" Association="Self.FK_vacancy_BazTarStavka">
+            <End Role="BazTarStavka" EntitySet="BazTarStavka" />
+            <End Role="vacancy" EntitySet="vacancy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vacancy_Doljnost" Association="Self.FK_vacancy_Doljnost">
+            <End Role="Doljnost" EntitySet="Doljnost" />
+            <End Role="vacancy" EntitySet="vacancy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gruppa_Otdel" Association="Self.FK_Gruppa_Otdel">
+            <End Role="Otdel" EntitySet="Otdel" />
+            <End Role="Gruppa" EntitySet="Gruppa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Uchastok_Gruppa" Association="Self.FK_Uchastok_Gruppa">
+            <End Role="Gruppa" EntitySet="Gruppa" />
+            <End Role="Uchastok" EntitySet="Uchastok" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vacancy_Gruppa" Association="Self.FK_vacancy_Gruppa">
+            <End Role="Gruppa" EntitySet="Gruppa" />
+            <End Role="vacancy" EntitySet="vacancy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vacancy_OKRB" Association="Self.FK_vacancy_OKRB">
+            <End Role="OKRB" EntitySet="OKRB" />
+            <End Role="vacancy" EntitySet="vacancy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Otdel_Podrazdel" Association="Self.FK_Otdel_Podrazdel">
+            <End Role="Podrazdel" EntitySet="Podrazdel" />
+            <End Role="Otdel" EntitySet="Otdel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vacancy_Otdel" Association="Self.FK_vacancy_Otdel">
+            <End Role="Otdel" EntitySet="Otdel" />
+            <End Role="vacancy" EntitySet="vacancy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vacancy_Podrazdel" Association="Self.FK_vacancy_Podrazdel">
+            <End Role="Podrazdel" EntitySet="Podrazdel" />
+            <End Role="vacancy" EntitySet="vacancy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vacancy_Razr" Association="Self.FK_vacancy_Razr">
+            <End Role="Razr" EntitySet="Razr" />
+            <End Role="vacancy" EntitySet="vacancy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vacancy_Sotrudnik" Association="Self.FK_vacancy_Sotrudnik">
+            <End Role="Sotrudnik" EntitySet="Sotrudnik" />
+            <End Role="vacancy" EntitySet="vacancy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vacancy_Uchastok" Association="Self.FK_vacancy_Uchastok">
+            <End Role="Uchastok" EntitySet="Uchastok" />
+            <End Role="vacancy" EntitySet="vacancy" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище shtatModelContainer" CdmEntityContainer="shtatEntities">
+          <EntitySetMapping Name="BazTarStavka">
+            <EntityTypeMapping TypeName="shtatModel.BazTarStavka">
+              <MappingFragment StoreEntitySet="BazTarStavka">
+                <ScalarProperty Name="IDStavka" ColumnName="IDStavka" />
+                <ScalarProperty Name="Gruppa" ColumnName="Gruppa" />
+                <ScalarProperty Name="Stavka" ColumnName="Stavka" />
+                <ScalarProperty Name="Datein" ColumnName="Datein" />
+                <ScalarProperty Name="Dateout" ColumnName="Dateout" />
+                <ScalarProperty Name="Priznak" ColumnName="Priznak" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Doljnost">
+            <EntityTypeMapping TypeName="shtatModel.Doljnost">
+              <MappingFragment StoreEntitySet="Doljnost">
+                <ScalarProperty Name="IDDolj" ColumnName="IDDolj" />
+                <ScalarProperty Name="Doljnost1" ColumnName="Doljnost" />
+                <ScalarProperty Name="Datein" ColumnName="Datein" />
+                <ScalarProperty Name="Dateout" ColumnName="Dateout" />
+                <ScalarProperty Name="Priznak" ColumnName="Priznak" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gruppa">
+            <EntityTypeMapping TypeName="shtatModel.Gruppa">
+              <MappingFragment StoreEntitySet="Gruppa">
+                <ScalarProperty Name="IDgr" ColumnName="IDgr" />
+                <ScalarProperty Name="Gruppa1" ColumnName="Gruppa" />
+                <ScalarProperty Name="IDOtdel" ColumnName="IDOtdel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="History">
+            <EntityTypeMapping TypeName="shtatModel.History">
+              <MappingFragment StoreEntitySet="History">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Podrazd" ColumnName="Podrazd" />
+                <ScalarProperty Name="Otdel" ColumnName="Otdel" />
+                <ScalarProperty Name="Gruppa" ColumnName="Gruppa" />
+                <ScalarProperty Name="Uch" ColumnName="Uch" />
+                <ScalarProperty Name="Dolj" ColumnName="Dolj" />
+                <ScalarProperty Name="Sotr" ColumnName="Sotr" />
+                <ScalarProperty Name="AUP" ColumnName="AUP" />
+                <ScalarProperty Name="Bts" ColumnName="Bts" />
+                <ScalarProperty Name="Kol" ColumnName="Kol" />
+                <ScalarProperty Name="Vsego" ColumnName="Vsego" />
+                <ScalarProperty Name="C093107" ColumnName="093107" />
+                <ScalarProperty Name="VisKval" ColumnName="VisKval" />
+                <ScalarProperty Name="TehVid" ColumnName="TehVid" />
+                <ScalarProperty Name="HarSpec" ColumnName="HarSpec" />
+                <ScalarProperty Name="ZaFil" ColumnName="ZaFil" />
+                <ScalarProperty Name="ZaKat" ColumnName="ZaKat" />
+                <ScalarProperty Name="ZaStar" ColumnName="ZaStar" />
+                <ScalarProperty Name="OkPov" ColumnName="OkPov" />
+                <ScalarProperty Name="ZaKontr" ColumnName="ZaKontr" />
+                <ScalarProperty Name="C1748" ColumnName="1748" />
+                <ScalarProperty Name="DoljOk" ColumnName="DoljOk" />
+                <ScalarProperty Name="ProfMast" ColumnName="ProfMast" />
+                <ScalarProperty Name="VisDost" ColumnName="VisDost" />
+                <ScalarProperty Name="Proch" ColumnName="Proch" />
+                <ScalarProperty Name="Itog" ColumnName="Itog" />
+                <ScalarProperty Name="Dat" ColumnName="Dat" />
+                <ScalarProperty Name="Priznak" ColumnName="Priznak" />
+                <ScalarProperty Name="OKRB" ColumnName="OKRB" />
+                <ScalarProperty Name="PrizOtdel" ColumnName="PrizOtdel" />
+                <ScalarProperty Name="PrizDolj" ColumnName="PrizDolj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HistoryDat">
+            <EntityTypeMapping TypeName="shtatModel.HistoryDat">
+              <MappingFragment StoreEntitySet="HistoryDat">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="HisDat" ColumnName="HisDat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OKRB">
+            <EntityTypeMapping TypeName="shtatModel.OKRB">
+              <MappingFragment StoreEntitySet="OKRB">
+                <ScalarProperty Name="IDkod" ColumnName="IDkod" />
+                <ScalarProperty Name="OKRB1" ColumnName="OKRB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Organiz">
+            <EntityTypeMapping TypeName="shtatModel.Organiz">
+              <MappingFragment StoreEntitySet="Organiz">
+                <ScalarProperty Name="IDOrg" ColumnName="IDOrg" />
+                <ScalarProperty Name="IDPodrUp" ColumnName="IDPodrUp" />
+                <ScalarProperty Name="IDPodr" ColumnName="IDPodr" />
+                <ScalarProperty Name="IDTip" ColumnName="IDTip" />
+                <ScalarProperty Name="Datein" ColumnName="Datein" />
+                <ScalarProperty Name="Dateout" ColumnName="Dateout" />
+                <ScalarProperty Name="Priznak" ColumnName="Priznak" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Otdel">
+            <EntityTypeMapping TypeName="shtatModel.Otdel">
+              <MappingFragment StoreEntitySet="Otdel">
+                <ScalarProperty Name="IDot" ColumnName="IDot" />
+                <ScalarProperty Name="Otdel1" ColumnName="Otdel" />
+                <ScalarProperty Name="IDpodr" ColumnName="IDpodr" />
+                <ScalarProperty Name="priznak" ColumnName="priznak" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Podrazdel">
+            <EntityTypeMapping TypeName="shtatModel.Podrazdel">
+              <MappingFragment StoreEntitySet="Podrazdel">
+                <ScalarProperty Name="IDp" ColumnName="IDp" />
+                <ScalarProperty Name="Podrazd" ColumnName="Podrazd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Razr">
+            <EntityTypeMapping TypeName="shtatModel.Razr">
+              <MappingFragment StoreEntitySet="Razr">
+                <ScalarProperty Name="IDRazr" ColumnName="IDRazr" />
+                <ScalarProperty Name="Razr1" ColumnName="Razr" />
+                <ScalarProperty Name="RazrETC" ColumnName="RazrETC" />
+                <ScalarProperty Name="MK" ColumnName="MK" />
+                <ScalarProperty Name="Datein" ColumnName="Datein" />
+                <ScalarProperty Name="Dateout" ColumnName="Dateout" />
+                <ScalarProperty Name="Priznak" ColumnName="Priznak" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sotrudnik">
+            <EntityTypeMapping TypeName="shtatModel.Sotrudnik">
+              <MappingFragment StoreEntitySet="Sotrudnik">
+                <ScalarProperty Name="IDSot" ColumnName="IDSot" />
+                <ScalarProperty Name="Sotrudnik1" ColumnName="Sotrudnik" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="shtatModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Uchastok">
+            <EntityTypeMapping TypeName="shtatModel.Uchastok">
+              <MappingFragment StoreEntitySet="Uchastok">
+                <ScalarProperty Name="IDuch" ColumnName="IDuch" />
+                <ScalarProperty Name="Uchastok1" ColumnName="Uchastok" />
+                <ScalarProperty Name="IDGrup" ColumnName="IDGrup" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vacancy">
+            <EntityTypeMapping TypeName="shtatModel.vacancy">
+              <MappingFragment StoreEntitySet="vacancy">
+                <ScalarProperty Name="IDVac" ColumnName="IDVac" />
+                <ScalarProperty Name="IDPodrPr" ColumnName="IDPodrPr" />
+                <ScalarProperty Name="IDPodrOtd" ColumnName="IDPodrOtd" />
+                <ScalarProperty Name="IDPodrPodr" ColumnName="IDPodrPodr" />
+                <ScalarProperty Name="IDPodrUch" ColumnName="IDPodrUch" />
+                <ScalarProperty Name="IDDolj" ColumnName="IDDolj" />
+                <ScalarProperty Name="IDSotr" ColumnName="IDSotr" />
+                <ScalarProperty Name="AUP" ColumnName="AUP" />
+                <ScalarProperty Name="IDRazr" ColumnName="IDRazr" />
+                <ScalarProperty Name="IDStav" ColumnName="IDStav" />
+                <ScalarProperty Name="Kol" ColumnName="Kol" />
+                <ScalarProperty Name="VsegoZarpl" ColumnName="VsegoZarpl" />
+                <ScalarProperty Name="C0_931_07" ColumnName="0.931.07" />
+                <ScalarProperty Name="KtVisKval" ColumnName="KtVisKval" />
+                <ScalarProperty Name="KtTehVid" ColumnName="KtTehVid" />
+                <ScalarProperty Name="KtHarSpec" ColumnName="KtHarSpec" />
+                <ScalarProperty Name="KtFilial" ColumnName="KtFilial" />
+                <ScalarProperty Name="KtZaKateg" ColumnName="KtZaKateg" />
+                <ScalarProperty Name="KtZaStarsh" ColumnName="KtZaStarsh" />
+                <ScalarProperty Name="OkladPovish" ColumnName="OkladPovish" />
+                <ScalarProperty Name="KtZaContract" ColumnName="KtZaContract" />
+                <ScalarProperty Name="Post1748" ColumnName="Post1748" />
+                <ScalarProperty Name="DoljnOklad" ColumnName="DoljnOklad" />
+                <ScalarProperty Name="KtZaProfMast" ColumnName="KtZaProfMast" />
+                <ScalarProperty Name="KtZaVisDostij" ColumnName="KtZaVisDostij" />
+                <ScalarProperty Name="KtProchaya" ColumnName="KtProchaya" />
+                <ScalarProperty Name="Itog" ColumnName="Itog" />
+                <ScalarProperty Name="Datein" ColumnName="Datein" />
+                <ScalarProperty Name="Dateout" ColumnName="Dateout" />
+                <ScalarProperty Name="Priznak" ColumnName="Priznak" />
+                <ScalarProperty Name="IDOKRB" ColumnName="IDOKRB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

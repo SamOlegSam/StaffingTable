@@ -1,0 +1,176 @@
+﻿@model IEnumerable<Shtat.Models.History>
+    <table class="table">
+    <tr>
+        <th>
+            Подразделение
+        </th>
+        <th>
+            Отдел
+        </th>
+        <th>
+            Группа
+        </th>
+        <th>
+            Участок
+        </th>
+        <th>
+            Должность
+        </th>
+        <th>
+            Сотрудник
+        </th>
+        <th>
+            АУП
+        </th>
+        <th>
+            БТС
+        </th>
+        <th>
+            Колич
+        </th>
+        <th>
+            Всего_ЗП
+        </th>
+        <th>
+            093_107
+        </th>
+        <th>
+            ВысКвал
+        </th>
+        <th>
+            ТехВид
+        </th>
+        <th>
+            ХарСпец
+        </th>
+        <th>
+            ЗаФил
+        </th>
+        <th>
+            ЗаКат
+        </th>
+        <th>
+            ЗаСтарш
+        </th>
+        <th>
+            ОкладПовыш
+        </th>
+        <th>
+            ЗаКонтр
+        </th>
+        <th>
+            1748
+        </th>
+        <th>
+            ДолжОклад
+        </th>
+        <th>
+            ПрофМаст
+        </th>
+        <th>
+            ВысДост
+        </th>
+        <th>
+            Прочая
+        </th>
+        <th>
+            Итог
+        </th>
+        <th>
+            Дата
+        </th>
+        <th>
+            Признак
+        </th>
+        <th></th>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Podrazd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Otdel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gruppa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Uch)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dolj)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sotr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AUP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bts)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vsego)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.C093107)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VisKval)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TehVid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HarSpec)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ZaFil)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ZaKat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ZaStar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OkPov)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ZaKontr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.C1748)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoljOk)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProfMast)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VisDost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proch)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Itog)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Priznak)
+            </td>
+
+        </tr>
+    }
+</table>

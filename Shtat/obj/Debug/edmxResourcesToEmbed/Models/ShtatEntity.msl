@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище shtatModelContainer" CdmEntityContainer="shtatEntities">
+    <EntitySetMapping Name="BazTarStavka">
+      <EntityTypeMapping TypeName="shtatModel.BazTarStavka">
+        <MappingFragment StoreEntitySet="BazTarStavka">
+          <ScalarProperty Name="IDStavka" ColumnName="IDStavka" />
+          <ScalarProperty Name="Gruppa" ColumnName="Gruppa" />
+          <ScalarProperty Name="Stavka" ColumnName="Stavka" />
+          <ScalarProperty Name="Datein" ColumnName="Datein" />
+          <ScalarProperty Name="Dateout" ColumnName="Dateout" />
+          <ScalarProperty Name="Priznak" ColumnName="Priznak" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Doljnost">
+      <EntityTypeMapping TypeName="shtatModel.Doljnost">
+        <MappingFragment StoreEntitySet="Doljnost">
+          <ScalarProperty Name="IDDolj" ColumnName="IDDolj" />
+          <ScalarProperty Name="Doljnost1" ColumnName="Doljnost" />
+          <ScalarProperty Name="Datein" ColumnName="Datein" />
+          <ScalarProperty Name="Dateout" ColumnName="Dateout" />
+          <ScalarProperty Name="Priznak" ColumnName="Priznak" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Organiz">
+      <EntityTypeMapping TypeName="shtatModel.Organiz">
+        <MappingFragment StoreEntitySet="Organiz">
+          <ScalarProperty Name="IDOrg" ColumnName="IDOrg" />
+          <ScalarProperty Name="IDPodrUp" ColumnName="IDPodrUp" />
+          <ScalarProperty Name="IDPodr" ColumnName="IDPodr" />
+          <ScalarProperty Name="IDTip" ColumnName="IDTip" />
+          <ScalarProperty Name="Datein" ColumnName="Datein" />
+          <ScalarProperty Name="Dateout" ColumnName="Dateout" />
+          <ScalarProperty Name="Priznak" ColumnName="Priznak" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Podrazd">
+      <EntityTypeMapping TypeName="shtatModel.Podrazd">
+        <MappingFragment StoreEntitySet="Podrazd">
+          <ScalarProperty Name="IDPodr" ColumnName="IDPodr" />
+          <ScalarProperty Name="Podrazd1" ColumnName="Podrazd" />
+          <ScalarProperty Name="Datein" ColumnName="Datein" />
+          <ScalarProperty Name="Dateout" ColumnName="Dateout" />
+          <ScalarProperty Name="priznak" ColumnName="priznak" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Razr">
+      <EntityTypeMapping TypeName="shtatModel.Razr">
+        <MappingFragment StoreEntitySet="Razr">
+          <ScalarProperty Name="IDRazr" ColumnName="IDRazr" />
+          <ScalarProperty Name="Razr1" ColumnName="Razr" />
+          <ScalarProperty Name="RazrETC" ColumnName="RazrETC" />
+          <ScalarProperty Name="MK" ColumnName="MK" />
+          <ScalarProperty Name="Datein" ColumnName="Datein" />
+          <ScalarProperty Name="Dateout" ColumnName="Dateout" />
+          <ScalarProperty Name="Priznak" ColumnName="Priznak" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sotrudnik">
+      <EntityTypeMapping TypeName="shtatModel.Sotrudnik">
+        <MappingFragment StoreEntitySet="Sotrudnik">
+          <ScalarProperty Name="IDSot" ColumnName="IDSot" />
+          <ScalarProperty Name="Sotrudnik1" ColumnName="Sotrudnik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tip">
+      <EntityTypeMapping TypeName="shtatModel.Tip">
+        <MappingFragment StoreEntitySet="Tip">
+          <ScalarProperty Name="IDTip" ColumnName="IDTip" />
+          <ScalarProperty Name="Tip1" ColumnName="Tip" />
+          <ScalarProperty Name="Datein" ColumnName="Datein" />
+          <ScalarProperty Name="Dateout" ColumnName="Dateout" />
+          <ScalarProperty Name="Priznak" ColumnName="Priznak" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vacancy">
+      <EntityTypeMapping TypeName="shtatModel.vacancy">
+        <MappingFragment StoreEntitySet="vacancy">
+          <ScalarProperty Name="IDVac" ColumnName="IDVac" />
+          <ScalarProperty Name="IDPodrPr" ColumnName="IDPodrPr" />
+          <ScalarProperty Name="IDPodrOtd" ColumnName="IDPodrOtd" />
+          <ScalarProperty Name="IDPodrPodr" ColumnName="IDPodrPodr" />
+          <ScalarProperty Name="IDPodrUch" ColumnName="IDPodrUch" />
+          <ScalarProperty Name="IDDolj" ColumnName="IDDolj" />
+          <ScalarProperty Name="IDSotr" ColumnName="IDSotr" />
+          <ScalarProperty Name="AUP" ColumnName="AUP" />
+          <ScalarProperty Name="IDRazr" ColumnName="IDRazr" />
+          <ScalarProperty Name="IDStav" ColumnName="IDStav" />
+          <ScalarProperty Name="Kol" ColumnName="Kol" />
+          <ScalarProperty Name="VsegoZarpl" ColumnName="VsegoZarpl" />
+          <ScalarProperty Name="C0_931_07" ColumnName="0.931.07" />
+          <ScalarProperty Name="KtVisKval" ColumnName="KtVisKval" />
+          <ScalarProperty Name="KtTehVid" ColumnName="KtTehVid" />
+          <ScalarProperty Name="KtHarSpec" ColumnName="KtHarSpec" />
+          <ScalarProperty Name="KtFilial" ColumnName="KtFilial" />
+          <ScalarProperty Name="KtZaKateg" ColumnName="KtZaKateg" />
+          <ScalarProperty Name="KtZaStarsh" ColumnName="KtZaStarsh" />
+          <ScalarProperty Name="OkladPovish" ColumnName="OkladPovish" />
+          <ScalarProperty Name="KtZaContract" ColumnName="KtZaContract" />
+          <ScalarProperty Name="Post1748" ColumnName="Post1748" />
+          <ScalarProperty Name="DoljnOklad" ColumnName="DoljnOklad" />
+          <ScalarProperty Name="KtZaProfMast" ColumnName="KtZaProfMast" />
+          <ScalarProperty Name="KtZaVisDostij" ColumnName="KtZaVisDostij" />
+          <ScalarProperty Name="KtProchaya" ColumnName="KtProchaya" />
+          <ScalarProperty Name="Itog" ColumnName="Itog" />
+          <ScalarProperty Name="Datein" ColumnName="Datein" />
+          <ScalarProperty Name="Dateout" ColumnName="Dateout" />
+          <ScalarProperty Name="Priznak" ColumnName="Priznak" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
